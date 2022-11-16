@@ -1,0 +1,100 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background: rgb(96,9,240);
+}
+
+.container{
+    width:100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+.container .loading {
+    user-select: none;
+    position: absolute;
+}
+
+.container .loading span {
+    
+    font-size: 3em;
+    font-weight: 700;
+    animation: changeColor 1s linear infinite;
+    animation-delay: calc(0.05s * var(--i));
+}
+  
+
+
+.container #loadingBarOut {
+    width: 301px;
+    height:50px;
+    background-color: white;
+    position: absolute;
+    top: 60%;
+    border-radius: 20px;
+}
+
+.container #loadingBarIn{
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: placeHolderShimmer;
+    animation-timing-function: linear;
+    background-color: #A611DA;
+    background: linear-gradient(to right, #8510af 8%, #4b0863 18%, #8510af 33%);
+    background-size: 800px 104px;
+    height: 70px;
+    position: relative;
+}
+
+.container .blockMessage{
+    z-index: 1;
+    position: relative;
+    width:400px;
+    height: 500px;
+    border-radius: 14px;
+    background-color: aqua;
+    right: -30%;
+    border: solid black;
+    border-width:thick;
+}
+
+@keyframes placeHolderShimmer {
+    0% {
+      background-position: -800px 0
+    }
+    100% {
+      background-position: 800px 0
+    }
+  }
+
+@keyframes changeColor {
+    0%,100%{
+        color:aqua;
+        transform: translateY(0);
+        text-shadow:  0 0 15px aqua,
+                        0 0 25px aqua;
+    }
+    50% {
+        color: #135;;
+        transform: translateY(0);
+        text-shadow:  0 0 15px #135,
+                        0 0 25px #135;}
+}
+
+@keyframes changeColorBar {
+    0%{
+        color:#A611DA;
+        transform: translateY(0);
+        text-shadow:  0 0 15px #A611DA,
+                        0 0 25px #A611DA;
+    }
+}
